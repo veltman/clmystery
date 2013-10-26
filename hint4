@@ -1,0 +1,5 @@
+To find all the Annabels' addresses, use the 'people' file:
+
+	grep "Annabel" people
+
+Notice that not all of the results are worth investigating.  Remember what we know about Annabel.

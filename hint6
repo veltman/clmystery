@@ -1,0 +1,9 @@
+To find a matching license plate, or a matching car, you can use grep on the 'vehicles' file:
+
+	grep "Honda" vehicles
+
+	grep "Blue" vehicles
+
+	grep "L337" vehicles
+
+This doesn't give us anything useful - why not? Try using 'head' on the file to investigate its structure.
