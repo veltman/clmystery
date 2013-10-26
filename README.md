@@ -25,20 +25,18 @@ The Command Line Murders
 	`OOOO'       `@    aa@@       aaa"""          @a        a@     a@@@',OOOO'
 
 
-	There's been a murder in Terminal City, and TCPD needs your help.
+There's been a murder in Terminal City, and TCPD needs your help.
 
-	To figure out whodunit, go to the 'mystery' subdirectory and start working from there.
+To figure out whodunit, you need access to a command line.
 
-	You'll want to start by collecting all the clues at the crime scene (the 'crimescene' file).
+Once you're ready, download this repo (or download clmystery.zip and unzip it).
 
-	The officers on the scene are pretty meticulous, so they've written down EVERYTHING in their officer reports.
+Open a Terminal, go to the location of the files, and start by reading the file 'instructions'.
 
-	Fortunately the sergeant went through and marked the real clues with the word "CLUE" in all caps.
+One way you can do this is with the command:
 
-	If you get stuck, open one of the hint files (from the CL, type 'cat hint1', 'cat hint2', etc.).
+	cat instructions
 
-	To find out the solution, open the file 'solution' (from the CL, type 'cat solution').
+To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
 
-	To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
-
-	Don't use a text editor to view any files except these instructions, the cheatsheet, and hints.
+Don't use a text editor to view any files except these instructions, the cheatsheet, and hints.
