@@ -1,4 +1,4 @@
-To view the solution, copy and paste this command and execute it from inside the main climurder directory
+To view the solution, copy and paste this command and execute it from inside the main clmystery directory
 
 echo " " && sed -n '/Z/p' solution | tail -n 6 | cut -c 8,22,23,41 && echo " "
 
