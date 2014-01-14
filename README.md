@@ -24,13 +24,14 @@ The Command Line Murders
 	OOOOOOO'  `@@a               @@a@@   @@""           a@@   a     |@@@ OOOO3
 	`OOOO'       `@    aa@@       aaa"""          @a        a@     a@@@',OOOO'
 
-Originally from: https://github.com/veltman/clmystery (Do **not** look here for help or solutions).
+
+Originally from: https://github.com/veltman/clmystery (Do **not** look there for help or solutions). Do not work together on this. 
 
 There's been a murder in Terminal City, and TCPD needs your help.
 
 To figure out whodunit, you need access to a command line.
 
-Once you're ready, download this repo (or download clmystery.zip and unzip it).
+Once you're ready, fork and clone this repo.
 
 Open a Terminal, go to the location of the files, and start by reading the file 'instructions'.
 
@@ -41,3 +42,7 @@ One way you can do this is with the command:
 To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
 
 Don't use a text editor to view any files except these instructions, the cheatsheet, and hints.
+
+## The Homework:
+
+When you have figured out the mystery, create a file called `solution` and put the name of the culprit in there. 
