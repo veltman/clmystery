@@ -24,6 +24,7 @@ The Command Line Murders
 	OOOOOOO'  `@@a               @@a@@   @@""           a@@   a     |@@@ OOOO3
 	`OOOO'       `@    aa@@       aaa"""          @a        a@     a@@@',OOOO'
 
+Originally from: https://github.com/veltman/clmystery (Do **not** look here for help or solutions).
 
 There's been a murder in Terminal City, and TCPD needs your help.
 
