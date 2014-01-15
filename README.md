@@ -29,7 +29,7 @@ There's been a murder in Terminal City, and TCPD needs your help.
 
 To figure out whodunit, you need access to a command line.
 
-Once you're ready, download this repo (or download clmystery.zip and unzip it).
+Once you're ready, download this repo (or download [clmystery.zip](https://github.com/veltman/clmystery/archive/master.zip "clmystery.zip") and unzip it).
 
 Open a Terminal, go to the location of the files, and start by reading the file 'instructions'.
 
