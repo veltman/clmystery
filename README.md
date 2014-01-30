@@ -37,6 +37,8 @@ One way you can do this is with the command:
 
 	cat instructions
 
+*(__NB__: `cat instructions` are not instructions for cats. The cat command "reads files sequentially, writing them to the standard output".)*
+
 To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
 
 Don't use a text editor to view any files except these instructions, the cheatsheet, and hints.
