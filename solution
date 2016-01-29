@@ -1,13 +1,17 @@
-To view the correct answer, copy and paste this command and execute it from inside the main clmystery directory:
+To check your answer, copy and paste this command, replace John Doe with the suspect's name you want to check, and execute it from inside the main clmystery directory:
+
+echo "John Doe" | $(command -v md5 || command -v md5sum) | grep -qf /dev/stdin solution && echo SUCCESS\! || echo WRONG ANSWER, TRY AGAIN.
+
+To give up and view the correct answer, copy and paste this command and execute it from inside the main clmystery directory:
 
 echo " " && sed -n '/Z/p' solution | tail -n 6 | cut -c 8,22,23,41 && echo " "
 
-32cacbec4b918e2fd130fd68cf818ae5
-d441066e77f060dbc90286ebabcafd29
-9b581b08c1d2c8cd37cce44399db5cbd
-aed548aaa54cc4aa89f644913b9e4dc1
-f43277254bf867dc191fc7310e1f827e
-618630133fe5a2bc77063b70eb60dbca
+32cacbec4b918e2fd130fd68cf818ae5  -
+d441066e77f060dbc90286ebabcafd29  -
+9b581b08c1d2c8cd37cce44399db5cbd  -
+aed548aaa54cc4aa89f644913b9e4dc1  -
+f43277254bf867dc191fc7310e1f827e  -
+618630133fe5a2bc77063b70eb60dbca  -
 CNLELXUUEQIHEDEMWMMAG  KWRWTWDWOIAUKQATOBIXGKVRNYEMW
 MBLMQCBYHRDVNWHXORVXX  QHAFLXPMNVLVPNDDYJRDGFESGPTSY
 QYDOJMRMDNIHLVEQNGGCN  NBAKLKCGFBSXIYPPWRLPWAGMWFIBA
