@@ -37,6 +37,8 @@ One way you can do this is with the command:
 
 	cat instructions
 
+(`cat` is a command that will print the contents of the file called `instructions` for you to read.)
+
 To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
 
 Don't use a text editor to view any files except these instructions, the cheatsheet, and hints.
