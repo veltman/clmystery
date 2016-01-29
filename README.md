@@ -43,4 +43,4 @@ Don't use a text editor to view any files except these instructions, the cheatsh
 
 ### Credits
 
-By [Noah Veltman](@veltman)
+By [Noah Veltman](https://github.com/veltman)
