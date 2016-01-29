@@ -95,7 +95,7 @@ The two core commands for navigating what directory the prompt is in are `cd` an
 `cd` is a command to change the current directory, and must be followed by a directory you want to change to.  You can supply an absolute or relative path.
 
 	This will put you in /files/videos
-	/files$ cd videos	
+	/files$ cd videos
 	/files/videos$
 
 	This will put you in /videos, and then the vines subdirectory
@@ -115,7 +115,7 @@ You can use `cd ..` to move up one level to the parent directory.
 
 `ls` will list the files in the current directory.  It's helpful for figuring out where you are, what files exist, and what subfolders exist.
 
-	/photos$ ls	
+	/photos$ ls
 	thumbnails  photo1.jpg  photo2.jpg
 
 Using `ls -l` will print the list vertically, with lots of other extra information about the file size, permissions, and last modified date:
@@ -143,7 +143,7 @@ Command Output
 --------------
 
 The commands we're going to talk about all output their results as text.  When you execute the command by hitting 'Enter', it will print out a bunch of output on extra lines below the prompt. For example, `head [file]` will print out the first 10 lines of a file.
-	
+
 	/files$ head names.txt
 	Dan Sinker
 	Erika Owens
@@ -352,7 +352,7 @@ Example:
 ---
 
 ## Questions/Comments/Suggestions ##
-Noah Veltman  
-Web: http://noahveltman.com  
-Twitter: [@veltman](http://twitter.com/veltman)  
-Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  
+Noah Veltman
+Web: http://noahveltman.com
+Twitter: [@veltman](http://twitter.com/veltman)
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)
