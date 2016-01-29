@@ -1,4 +1,8 @@
-To view the solution, copy and paste this command and execute it from inside the main clmystery directory
+- To check your guess, copy and paste the following command, replacing John Doe with the name of your suspect.
+
+echo John Doe | md5sum -c solution --status && echo Correct\! Good work, detective. || echo Incorrect\! Check the hint files if you need additional help.
+
+- To just view the solution, copy and paste this command and execute it from inside the main clmystery directory
 
 echo " " && sed -n '/Z/p' solution | tail -n 6 | cut -c 8,22,23,41 && echo " "
 
@@ -18,3 +22,5 @@ YRHBURSMVBEWFOKDPLGMZ  OYQNVDYWDBBSEEWXDRPWUOCFJXPLH
 IDMFKXGKIPFEKAPLBGOKR  VCYLAYBSSVLPXQECRYFLLKCIMQNUP
 FRUBVCDJHKCPBINDNVHUW  KRDRNDTRIGYLAIYJEMRIKIBAYGTSY
 BGTCTDNYTBMPCRAVGNRWK  MWFRWZBAFCRXAFFBXSTLPQPFLGIFJ
+
+32cacbec4b918e2fd130fd68cf818ae5 *-
