@@ -46,6 +46,6 @@ Don't use a text editor to view any files except these instructions, the cheatsh
 ### Credits
 
 By Noah Veltman  
-[http://noahveltman.com/](http://noahveltman.com)  
+Projects: [noahveltman.com](http://noahveltman.com)  
 GitHub: [veltman](https://github.com/veltman)  
 Twitter: [@veltman](https://twitter.com/veltman)  
