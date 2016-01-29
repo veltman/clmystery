@@ -1,6 +1,6 @@
 To check your answer, copy and paste this command, replace John Doe with the suspect's name you want to check, and execute it from inside the main clmystery directory:
 
-echo "John Doe" | $(command -v md5 || command -v md5sum) | grep -qf /dev/stdin solution && CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+echo "John Doe" | $(command -v md5 || command -v md5sum) | grep -qf /dev/stdin solution && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
 
 To give up and view the correct answer, copy and paste this command and execute it from inside the main clmystery directory:
 
