@@ -34,7 +34,7 @@ Fortunately the sergeant went through and marked the real clues with the word "C
 
 If you get stuck, open one of the hint files (from the CL, type 'cat hint1', 'cat hint2', etc.).
 
-To find out the solution, open the file 'solution' (from the CL, type 'cat solution').
+To check your answer or find out the solution, open the file 'solution' (from the CL, type 'cat solution').
 
 To get started on how to use the command line, open cheatsheet.md or cheatsheet.pdf (from the command line, you can type 'nano cheatsheet.md').
 
