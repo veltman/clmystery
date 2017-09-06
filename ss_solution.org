@@ -6,25 +6,63 @@
 #+LANGUAGE:    'en'
 #+TEXT:        Notes and commands for the solution to the CLI challenge
 
-* STEP 0 Download and setup:
+* STEP 0: Download and setup:
   1. =git clone git@github.com:shamindras/clmystery.git=
   2. =git remote add upstream git@github.com:veltman/clmystery.git=
-  3. ==
+  3. =git remote -v=
 
-* STEP 1 Examine instructions:
+* STEP 1: Examine instructions:
   1. =less instruction=
+  2. # Need `mystery` dir and `crimescene` file
+  3. # Need to `grep` for `CLUE`
+  4. # We will check the solution using a simple command as follows later:
+  5. =echo "John Doe" | /sbin/md5 | \grep --color -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.=
+  6. =cd mystery=
+  7. =less crimescene=
+  8. =\grep --color -nr "CLUE" crimescene=
+  9. # crimescene:9213:CLUE: Footage from an ATM security camera is blurry but shows that the perpetrator is a *tall male, at least 6'*.
+  10. # crimescene:9370:CLUE: Found a wallet believed to belong to the killer: no ID, just loose change, and *membership cards for AAA, Delta SkyMiles, the local library, and the Museum of Bash History*. The cards are totally untraceable and have no name, for some reason.
+  11. # crimescene:11002:CLUE: Questioned the *barista* at the local coffee shop. He said a *woman* left right before they heard the shots. The name on her latte was *Annabel*, she had *blond spiky hair* and a *New Zealand accent*.
 
-* STEP 1 Examine instructions:
-  1. =less instruction=
+* STEP 2: Examine People
+  1. # Search for all Female (F) Annabels
+  2. =\grep --color -e 'Annabel.*F'people=
+  3. # Annabel Sun	F	26	*Hart Place, line 40*
+  4. # Annabel Church	F	38	*Buckingham Place, line 179*
 
-* STEP 1 Examine instructions:
-  1. =less instruction=
+* STEP 3: Examine memberships:
+  1. =cd memberships=
+  2. =less Delta_SkyMiles=
+  3. # Looks like we need to do a uniq set intersection between *AAA*, *Delta SkyMiles*, *local library*, *Museum of Bash History*
+  4. comm -12 <(comm -12 <(sort AAA) <(sort Delta_SkyMiles)) Museum_of_Bash_History
+  5. # returns: *Yu Sakaguchi*
+  6. comm -12 <(comm -12 <(comm -12 <(sort AAA) <(sort Delta_SkyMiles)) Museum_of_Bash_History) Terminal_City_Library
+  7. =cd ..=
+  8. =\grep --color "Yu Sakaguchi" people=
+  9. # Yu Sakaguchi	F	80	*Rozella Street, line 281*
 
-* STEP 1 Examine instructions:
-  1. =less instruction=
+* STEP 4: Examine streets:
+  1. =cd streets=
+  2. # We want to search Hart Place, Buckingham Place, Rozella St
+  3. =sed -n '40p' Hart_Place=
+  4. # SEE INTERVIEW #47246024
+  5. =sed -n '179p' Buckingham_Place=
+  6. # SEE INTERVIEW #699607
+  7. =sed -n '281p' Rozella_Street=
+  4. # event saleswoman dafter faithfulness vegetated rennet
 
-* STEP 1 Examine instructions:
-  1. =less instruction=
+* STEP 5: Examine Interviews:
+  1. =cd ../interviews=
+  2. # Annabel Sun	F	26	*Hart Place, line 40*
+  3. =less interview-47246024=
+  4. # Ms. Sun has brown hair and is not from New Zealand.  Not the witness from the cafe.
+  5. # Annabel Church	F	38	*Buckingham Place, line 179*
+  6. =less interview-699607=
+  7. # Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see anyone she could identify as the shooter, that she ran away as soon as the shots were fired. However, she reports seeing the *car* that fled the scene.  Describes it as a *blue Honda*, with a license plate that *starts with* "*L337*" and *ends with* "*9*"
+
+* STEP 6: Examine streets:
+  1. =cd ../interviews=
 
 
-  2. 
+
+
