@@ -1,0 +1,30 @@
+#+TITLE:       CLI Mystery
+#+AUTHOR:      Shamindra Shrotriya
+#+EMAIL:       shamindra@cmu.edu
+#+DESCRIPTION: Notes taken to produce solution for CLI Mystery
+#+KEYWORDS:    36750
+#+LANGUAGE:    'en'
+#+TEXT:        Notes and commands for the solution to the CLI challenge
+
+* STEP 0 Download and setup:
+  1. =git clone git@github.com:shamindras/clmystery.git=
+  2. =git remote add upstream git@github.com:veltman/clmystery.git=
+  3. ==
+
+* STEP 1 Examine instructions:
+  1. =less instruction=
+
+* STEP 1 Examine instructions:
+  1. =less instruction=
+
+* STEP 1 Examine instructions:
+  1. =less instruction=
+
+* STEP 1 Examine instructions:
+  1. =less instruction=
+
+* STEP 1 Examine instructions:
+  1. =less instruction=
+
+
+  2. 
