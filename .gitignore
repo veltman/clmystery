@@ -46,3 +46,9 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+
+# minted
+_minted*
+
+# TeX files
+*.tex
