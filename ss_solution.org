@@ -1,0 +1,199 @@
+#+TITLE:       CLI Mystery
+#+AUTHOR:      Shamindra Shrotriya
+#+EMAIL:       shamindra@cmu.edu
+#+DESCRIPTION: Notes taken to produce solution for CLI Mystery
+#+KEYWORDS:    36750
+#+LANGUAGE:    'en'
+#+TEXT:        Notes and commands for the solution to the CLI challenge
+#+OPTIONS:     toc:nil
+
+* STEP 0: Download and setup:
+  1. =git clone git@github.com:shamindras/clmystery.git=
+  2. =git remote add upstream git@github.com:veltman/clmystery.git=
+  3. =git remote -v=
+
+* STEP 1: Examine instructions:
+  1. =less instruction=
+  2. =# Need `mystery' dir and `crimescene' file=
+  3. =# Need to `grep' for `CLUE'=
+  4. =# We will check the solution using a simple command as follows:=
+  5. =echo "John Doe" | /sbin/md5 | \grep --color -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.=
+  6. =cd mystery=
+  7. =less crimescene=
+  8. =\grep --color -nr "CLUE" crimescene=
+  #+BEGIN_EXAMPLE
+  crimescene:9213:CLUE: Footage from an ATM security camera is blurry 
+  but shows that the perpetrator is a *tall male, at least 6'*.
+
+  crimescene:9370:CLUE: Found a wallet believed to belong to the killer: no ID, 
+  just loose change, and *membership cards for AAA, Delta SkyMiles, the local 
+  library, and the Museum of Bash History*. The cards are totally 
+  untraceable and have no name, for some reason.
+
+  crimescene:11002:CLUE: Questioned the *barista* at the local coffee shop. 
+  He said a *woman* left right before they heard the shots. The name on her 
+  latte was *Annabel*, she had *blond spiky hair* and a *New Zealand accent*.
+  #+END_EXAMPLE
+
+* STEP 2: Examine People
+  1. =# Search for all Female (F) Annabels=
+  2. =\grep --color -e 'Annabel.*F'people=
+  #+BEGIN_EXAMPLE
+  Annabel Sun	F	26	Hart Place, line 40
+  Annabel Church	F	38	Buckingham Place, line 179
+  Annabel Fuglsang	M	40	Haley Street, line 176
+  #+END_EXAMPLE
+  3. [@3] =# It looks like *Annabel Sun* and *Annabel Church* are the 2 Females=
+
+* STEP 3: Examine memberships:
+  1. =cd memberships=
+  2. =less Delta_SkyMiles=
+  3. =# Looks like we need to do a uniq set intersection between *AAA*, *Delta SkyMiles*, *local library*, *Museum of Bash History*=
+  4. =comm -12 <(comm -12 <(sort AAA) <(sort Delta_SkyMiles)) Museum_of_Bash_History=
+  #+BEGIN_EXAMPLE
+  Yu Sakaguchi
+  #+END_EXAMPLE
+  5. [@5] =comm -12 <(comm -12 <(comm -12 <(sort AAA) <(sort Delta_SkyMiles)) Museum_of_Bash_History) Terminal_City_Library=
+  6. =cd ..=
+  9. =\grep --color "Yu Sakaguchi" people=
+  10. =# Yu Sakaguchi	F	80	*Rozella Street, line 281*=
+
+* STEP 4: Examine streets:
+  1. =cd streets=
+  2. =# We want to search Hart Place, Buckingham Place, Rozella St=
+  3. =sed -n '40p' Hart_Place=  
+  #+BEGIN_EXAMPLE
+  SEE INTERVIEW #47246024
+  #+END_EXAMPLE
+  4. [@4] =sed -n '179p' Buckingham_Place=
+  #+BEGIN_EXAMPLE
+  SEE INTERVIEW #699607
+  #+END_EXAMPLE
+  5. [@5] =sed -n '281p' Rozella_Street=
+  #+BEGIN_EXAMPLE
+  event saleswoman dafter faithfulness vegetated rennet
+  #+END_EXAMPLE
+  6. [@6] =# This looks like a dead end. We will focus on the other clues.=
+  
+* STEP 5: Examine Interviews:
+  1. =cd ../interviews=
+  2. =# Annabel Sun F	26	*Hart Place, line 40*=
+  3. =less interview-47246024=
+  #+BEGIN_EXAMPLE
+  Ms. Sun has brown hair and is not from New Zealand.  
+  Not the witness from the cafe.
+  #+END_EXAMPLE
+  4. [@4] =# Annabel Church	F	38	*Buckingham Place, line 179*=
+  5. =less interview-699607=
+  #+BEGIN_EXAMPLE
+  Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see 
+  anyone she could identify as the shooter, that she ran away as soon as 
+  the shots were fired. However, she reports seeing the *car* that fled 
+  the scene. Describes it as a *blue Honda*, with a license plate 
+  that *starts with* "*L337*" and *ends with* "*9*"
+  #+END_EXAMPLE
+  
+* STEP 6: Examine vehicles:
+  1. =cd ..=
+  2. =\grep --color -A 5 "L337" vehicles=
+  3. # License Plate L337ZR9
+  #+BEGIN_EXAMPLE
+     Make: Honda
+     Color: Red
+     Owner: Katie Park
+     Height: 6'2"
+     Weight: 189 lbs
+     
+     License Plate L337P89
+     Make: Honda
+     Color: Teal
+     Owner: Mike Bostock
+     Height: 6'4"
+     Weight: 173 lbs
+     
+     License Plate L337GX9
+     Make: Mazda
+     Color: Orange
+     Owner: John Keefe
+     Height: 6'4"
+     Weight: 185 lbs
+     
+     License Plate L337QE9
+     Make: Honda
+     Color: Blue
+     Owner: Erika Owens
+     Height: 6'5"
+     Weight: 220 lbs
+     
+     License Plate L337GB9
+     Make: Toyota
+     Color: Blue
+     Owner: Matt Waite 
+     Height: 6'1"
+     Weight: 190 lbs
+     
+     License Plate L337OI9
+     Make: Jaguar
+     Color: Blue
+     Owner: Brian Boyer
+     Height: 6'6"
+     Weight: 201 lbs
+     
+     License Plate L337X19
+     Make: Fiat
+     Color: Blue
+     Owner: Al Shaw
+     Height: 6'5"
+     Weight: 240 lbs
+     
+     License Plate L337539
+     Make: Honda
+     Color: Blue
+     Owner: Aron Pilhofer
+     Height: 5'3"
+     Weight: 198 lbs
+     
+     License Plate L3373U9
+     Make: Ford
+     Color: Blue
+     Owner: Miranda Mulligan
+     Height: 6'6"
+     Weight: 156 lbs
+     
+     License Plate L337369
+     Make: Honda
+     Color: Blue
+     Owner: Heather Billings
+     Height: 5'2"
+     Weight: 244 lbs
+     
+     License Plate L337DV9
+     Make: Honda
+     Color: Blue
+     Owner: Joe Germuska
+     Height: 6'2"
+     Weight: 164 lbs
+     
+     License Plate L3375A9
+     Make: Honda
+     Color: Blue
+     Owner: Jeremy Bowers
+     Height: 6'1"
+     Weight: 204 lbs
+     
+     License Plate L337WR9
+     Make: Honda
+     Color: Blue
+     Owner: Jacqui Maher
+     Height: 6'2"
+     Weight: 130 lbs
+  #+END_EXAMPLE
+  4. [@4] =# We know that the suspect is atleast *6' tall*=
+  7. =# So we have narrowed the list of suspects down to: *Joe Germuska, Jeremy Bowers*. Let's check:=
+  8. =echo "Joe Germuska" | /sbin/md5 | \grep --color --color -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.=
+  9. # SORRY, TRY AGAIN.
+  10. =echo "Jeremy Bowers" | /sbin/md5 | \grep --color --color -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.=
+  11. =# CORRECT! GREAT WORK, GUMSHOE.=
+  12. Yay looks like we have found the murderer i.e. *Jeremy Bowers*
+  13. Well done - now go and do the other problems in STAT_36750!
+
