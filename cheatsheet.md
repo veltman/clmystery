@@ -286,11 +286,11 @@ This will print out the last 15 lines of a file:
 
 Or, if you want to print all the file but leave out the FIRST 15 lines, you can add a plus sign:
 
-	/files$ tail -n +15 names.txt
+	/files$ tail -n +16 names.txt
 
 This is helpful if you want to, say, remove a header row from a CSV file:
 
-	/files$ tail -n +1 names.txt > names-no-header.txt
+	/files$ tail -n +2 names.txt > names-no-header.txt
 
 Miscellaneous
 -------------
