@@ -339,15 +339,15 @@ Example:
 
 	is the same as
 
-	/files$ tail -n +7 names.txt | head -n 5
-	(Print out everything but the first 7 lines, then print the first 5 lines of that)
+	/files$ tail -n +8 names.txt | head -n 5
+	(Print out everything starting with line 8, then print the first 5 lines of that)
 
 	is pretty much the same as:
 
-	/files$ tail -n +7 names.txt > temporaryfile.txt
+	/files$ tail -n +8 names.txt > temporaryfile.txt
 	/files$ head -n 5 temporaryfile.txt
 	/files$ rm temporaryfile.txt
-	(Save everything but the first 7 lines to a temporary file, then print the first 5 lines of that, then delete the temporary file)
+	(Save everything starting with line 8 to a temporary file, then print the first 5 lines of that, then delete the temporary file)
 
 ---
 
